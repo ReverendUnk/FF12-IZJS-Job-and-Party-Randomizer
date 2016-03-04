@@ -10,3 +10,6 @@ v.2.1
 
 v.2
 - code rewrite courtesy of jressey, job duplication no longer possible
+
+v.1
+- initial code release
