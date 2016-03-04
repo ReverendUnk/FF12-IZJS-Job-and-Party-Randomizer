@@ -1,4 +1,4 @@
-document.write("<button onclick='run()'>Click to FULLY randomize the party/jobs</button>");
+window.onload = run;
 
 function run() {
 
@@ -64,12 +64,12 @@ function assignJobs(members, jobs) {
 
 document.body.innerHTML = ''; // clears the entire body of html - more useful in case of the button below being clicked again than anything else
 document.write("<center><br><br><br><h1>")
-document.write("The main party is :::" + partyMembers[0] + ", " + partyMembers[1] + ", and " + partyMembers[2] + "!<br><br>");
+document.write("The main party is ::: " + partyMembers[0] + ", " + partyMembers[1] + ", and " + partyMembers[2] + "!<br><br>");
 document.write("<br><img src='img/Vaan.png'> Vaan :: " + assignedJobs.getKeyByValue("Vaan"));
 document.write("<br><img src='img/Balthier.png'> Balthier :: " + assignedJobs.getKeyByValue("Balthier"));
 document.write("<br><img src='img/Fran.png'> Fran :: " + assignedJobs.getKeyByValue("Fran"));
 document.write("<br><img src='img/Basch.png'> Basch :: " + assignedJobs.getKeyByValue("Basch"));
 document.write("<br><img src='img/Ashe.png'> Ashe :: " + assignedJobs.getKeyByValue("Ashe"));
 document.write("<br><img src='img/Penelo.png'> Penelo :: " + assignedJobs.getKeyByValue("Penelo"));
-document.write("</h1><br>Group/Job composition not to your liking?<br><button onclick='run()'>Try again</button></center>");
+document.write("</h1><br>Group/Job composition not to your liking?<br><button onclick='run()'>Try again</button></center>"); // This button doesn't work in IE/Firefox. No clue why.
 };
