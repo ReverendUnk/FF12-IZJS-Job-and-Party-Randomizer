@@ -6,7 +6,7 @@ Current known bugs:
 
 v.2.2
 - Workaround found that should allow the 'Try again' button to function in Firefox
-- 
+
 v.2.1
 - document no longer requires initial button press for first run
 - minor punctuation change
