@@ -5,4 +5,4 @@ Current known bugs:
 - 'Try again' button doesn't work properly in Firefox and IE
 
 v.2
-- coderewrite courtesy of jressey, job dubplication no longer possible
+- coderewrite courtesy of jressey, job duplication no longer possible
