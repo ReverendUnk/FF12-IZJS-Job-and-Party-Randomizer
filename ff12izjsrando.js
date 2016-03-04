@@ -1,50 +1,75 @@
-// I hate Javascript, but it's the only programming language I have ANY experience in.
-// That said, my 'experience' with it - up until this - was over 15 years ago.
-//
-// This code will be bad, and I'll feel bad, but hopefully it will work.
-// Hopefully.
-//   - Reverend Unk
+document.write("<button onclick='run()'>Click to FULLY randomize the party/jobs</button>");
 
-document.write("<button onclick='aram()'>Click to FULLY randomize the party/jobs</button>"); // Ideally, this wouldn't be needed for the first run, but I'm dumb, so it is.
-function aram() {
+function run() {
+
+//helper, should extract this
+Object.prototype.getKeyByValue = function( value ) {
+    for( var prop in this ) {
+        if( this.hasOwnProperty( prop ) ) {
+             if( this[ prop ] === value )
+                 return prop;
+        }
+    }
+};
+
+
+//should extract in to characters class
 var members = [
-	" Vaan",
-	" Balthier",
-	" Fran",
-	" Basch",
-	" Ashe",
-	" Penelo",
+"Vaan",
+"Balthier",
+"Fran",
+"Basch",
+"Ashe",
+"Penelo",
 ];
-var partyMembers = members.sort(function(){return .5 - Math.random()}).slice(0,3); // Randomly chooses 3 from the party members listed above.
-var jobs = [
-	"White Mage",
-	"Uhlan",
-	"Machinist",
-	"Red Mage",
-	"Knight",
-	"Monk",
-	"Time Mage",
-	"Breaker",
-	"Archer",
-	"Black Mage",
-	"Samurai / Mononofu",
-	"Hunter",
-];
-var balthier = jobs.sort(function(){return .5 - Math.random()}).slice(0,1); // Randomly chooses 1 from the jobs listed above for Balthier.
-var vaan = jobs.sort(function(){return .5 - Math.random()}).slice(0,1);
-var fran = jobs.sort(function(){return .5 - Math.random()}).slice(0,1);
-var basch = jobs.sort(function(){return .5 - Math.random()}).slice(0,1);
-var ashe = jobs.sort(function(){return .5 - Math.random()}).slice(0,1);
-var penelo = jobs.sort(function(){return .5 - Math.random()}).slice(0,1);
+
+assignParty(members);
+
+//Randomly chooses 3 items from an array of Strings, specifically to be main party.  
+//This can be extended to do more thorough processing
+function assignParty(members) {
+	partyMembers = members.sort(function(){return .5 - Math.random()}).slice(0,3);
+};
+
+//////should extract in to jobs class
+var jobs = {};
+jobs[0] = "White Mage";
+jobs[1] = "Uhlan";
+jobs[2] = "Machinist";
+jobs[3] = "Red Mage";
+jobs[4] = "Knight";
+jobs[5] = "Monk";
+jobs[6] = "Time Mage";
+jobs[7] = "Breaker";
+jobs[8] = "Archer";
+jobs[9] = "Black Mage";
+jobs[10] = "Samurai / Mononofu";
+jobs[11] = "Hunter";
+
+var assignedJobs = {};
+
+assignJobs(members, jobs);
+
+function assignJobs(members, jobs) {
+	for (i=0; i < members.length; i++) {
+		while(assignedJobs.getKeyByValue(members[i]) == null) {
+			var jobNumber = Math.floor((Math.random() * 11));
+			var job = jobs[jobNumber];
+			if (assignedJobs[job] == null) {
+				assignedJobs[job] = members[i];
+			}
+		}
+	}
+};
 
 document.body.innerHTML = ''; // clears the entire body of html - more useful in case of the button below being clicked again than anything else
 document.write("<center><br><br><br><h1>")
-document.write("The main party is :::" + partyMembers + "<br><br>");
-document.write("<br><img src='img/Vaan.png'> Vaan :: " + vaan);
-document.write("<br><img src='img/Balthier.png'> Balthier :: " + balthier);
-document.write("<br><img src='img/Fran.png'> Fran :: " + fran);
-document.write("<br><img src='img/Basch.png'> Basch :: " + basch);
-document.write("<br><img src='img/Ashe.png'> Ashe :: " + ashe);
-document.write("<br><img src='img/Penelo.png'> Penelo :: " + penelo);
-document.write("</h1><br>Group/Job composition not to your liking?<br><button onclick='aram()'>Try again</button></center>")
+document.write("The main party is :::" + partyMembers[0] + ", " + partyMembers[1] + ", and " + partyMembers[2] + "!<br><br>");
+document.write("<br><img src='img/Vaan.png'> Vaan :: " + assignedJobs.getKeyByValue("Vaan"));
+document.write("<br><img src='img/Balthier.png'> Balthier :: " + assignedJobs.getKeyByValue("Balthier"));
+document.write("<br><img src='img/Fran.png'> Fran :: " + assignedJobs.getKeyByValue("Fran"));
+document.write("<br><img src='img/Basch.png'> Basch :: " + assignedJobs.getKeyByValue("Basch"));
+document.write("<br><img src='img/Ashe.png'> Ashe :: " + assignedJobs.getKeyByValue("Ashe"));
+document.write("<br><img src='img/Penelo.png'> Penelo :: " + assignedJobs.getKeyByValue("Penelo"));
+document.write("</h1><br>Group/Job composition not to your liking?<br><button onclick='run()'>Try again</button></center>");
 };
