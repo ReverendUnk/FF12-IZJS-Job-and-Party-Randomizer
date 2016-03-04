@@ -9,7 +9,8 @@ v.2.1
 - minor punctuation change
 
 v.2
-- code rewrite courtesy of jressey, job duplication no longer possible
+- code rewrite courtesy of jressey
+- job duplication no longer possible
 
 v.1
 - initial code release
