@@ -71,5 +71,5 @@ document.write("<br><img src='img/Fran.png'> Fran :: " + assignedJobs.getKeyByVa
 document.write("<br><img src='img/Basch.png'> Basch :: " + assignedJobs.getKeyByValue("Basch"));
 document.write("<br><img src='img/Ashe.png'> Ashe :: " + assignedJobs.getKeyByValue("Ashe"));
 document.write("<br><img src='img/Penelo.png'> Penelo :: " + assignedJobs.getKeyByValue("Penelo"));
-document.write("</h1><br>Group/Job composition not to your liking?<br><button onclick='run()'>Try again</button></center>"); // This button doesn't work in IE/Firefox. No clue why.
+document.write("</h1><br>Group/Job composition not to your liking?<br><button onclick='location.reload()'>Try again</button></center>"); // Reloads the page instead of re-running the functions. Firefox workaround. IE still borked.
 };
