@@ -4,6 +4,13 @@ Randomly chooses 3 party members and jobs for all 6 characters for the IZJS vers
 Current known bugs:
 - 'Try again' button doesn't work properly in Firefox and IE
 
+v.3
+- Build file structure for asset files
+- Move images
+- Place view code in html file
+- Import assets from bootstrap, handlebars, and underscore
+- Apply bootstrap styles and handlebars templatting to interface
+
 v.2.1
 - document no longer requires initial button press for first run
 - minor punctuation change
