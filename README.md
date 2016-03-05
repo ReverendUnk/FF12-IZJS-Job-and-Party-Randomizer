@@ -2,7 +2,10 @@
 Randomly chooses 3 party members and jobs for all 6 characters for the IZJS version of FFXII
 
 Current known bugs:
-- 'Try again' button doesn't work properly in Firefox and IE
+- 'Try again' button doesn't work properly in Internet Explorer
+
+v.2.2
+- Workaround found that should allow the 'Try again' button to function in Firefox
 
 v.3
 - Build file structure for asset files
@@ -16,7 +19,8 @@ v.2.1
 - minor punctuation change
 
 v.2
-- code rewrite courtesy of jressey, job duplication no longer possible
+- code rewrite courtesy of jressey
+- job duplication no longer possible
 
 v.1
 - initial code release
