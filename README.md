@@ -7,6 +7,13 @@ Current known bugs:
 v.2.2
 - Workaround found that should allow the 'Try again' button to function in Firefox
 
+v.3
+- Build file structure for asset files
+- Move images
+- Place view code in html file
+- Import assets from bootstrap, handlebars, and underscore
+- Apply bootstrap styles and handlebars templatting to interface
+
 v.2.1
 - document no longer requires initial button press for first run
 - minor punctuation change
