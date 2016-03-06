@@ -4,9 +4,12 @@ Randomly chooses 3 party members and jobs for all 6 characters for the IZJS vers
 Current known bugs:
 - 'Try again' button doesn't work properly in Internet Explorer
 
+v.4
+- change to node app, deployed to heroku
+
 v.3.0.1
 - fixed version order ;p
-- 
+
 v.3
 - Build file structure for asset files
 - Move images
