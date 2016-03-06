@@ -11,8 +11,7 @@
 			<br />
 		<h1>IZJS Party Generator</h1>
 		<br />
-		<button class="btn btn-primary btn-lg" onclick="run()">Create a random party</button>
-
+		<button class="btn btn-custom btn-lg" onclick="run()">Create a random party</button>
 		<div class="party-container">
 			<div id="primary-party">
 			<div id="job-assignments"></div>
@@ -36,12 +35,13 @@
 			{{#if last}}
 			</div>
 			<p>Is this party not to your liking?</p>
-			<button class="btn btn-primary" onclick="run()">Try Again!</button>
+			<button class="btn btn-custom btn-lg" onclick="run()">Try Again!</button>
 			{{/if}}
 			{{/format}} 
 			</script>
 		</div>
-	</div>
+		<br />
+		<br />
 	</div>
 <script src="jquery/dist/jquery.min.js"></script>
 <script src="bootstrap/dist/js/bootstrap.min.js"></script>
