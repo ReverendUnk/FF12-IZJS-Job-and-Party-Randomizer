@@ -13,16 +13,7 @@ app.use(express.static(path.join(__dirname, 'node_modules')));
 app.use(express.static(path.join(__dirname, 'assets')));
 
 app.get('/', function(req, res) {
-	res.render('index', {
-		characters: [
-			{id: 1, name: "Vaan", job: null},
-			{id: 2, name: "Penelo", job: null},
-			{id: 3, name: "Bash", job: null},
-			{id: 4, name: "Fran", job: null},
-			{id: 5, name: "Ashe", job: null},
-			{id: 6, name: "Balthier", job: null},
-		]
-	});
+	res.render('index');
 });
 
 app.get('/shuffle', function(req, res) {
