@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+	<link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bootstrap/dist/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<div class="container">
+		<div class="container centered">
+		<h1>IZJS Party Generator</h1>
+		<button class="btn btn-primary" onclick="run()">Create a random party</button>
+
+		<div class="party-container">
+			<div id="primary-party">
+			<div id="job-assignments"></div>
+			<script id="job-assignments-template" type="text/x-handlebars-template"> 
+			<div id="job-assignments">
+			{{#format characters}} 
+			{{#if first}}
+			<h1>Main Party</h1>
+			  <div class="well">
+			{{/if}}
+			{{#if displayCharacterDetails}}
+			<div class="character-row">
+			<img src='img/{{name}}.png'>&nbsp;&nbsp;{{name}}::&nbsp;&nbsp;{{job}}
+			</div>
+			{{/if}} 
+			{{#if third}}
+			  </div>
+			  <h1>Reserves</h1>
+			  <div class="well">
+			{{/if}}
+			{{#if last}}
+			</div>
+			<p>Is this party not to your liking?</p>
+			<button class="btn btn-primary" onclick="run()">Try Again!</button>
+			{{/if}}
+			{{/format}} 
+			</script>
+		</div>
+	</div>
+	</div>
+<script src="jquery/dist/jquery.min.js"></script>
+<script src="bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="underscore/underscore-min.js"></script>
+<script src="js/handlebars-v4.0.5.js"></script>
+<script src="js/helpers.js"></script>
+<script src="js/ff12izjsrando.js"></script>
+</body>
+</html>
