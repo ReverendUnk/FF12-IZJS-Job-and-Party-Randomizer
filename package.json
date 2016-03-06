@@ -1,0 +1,17 @@
+{
+  "name": "izjs randomizer",
+  "version": "0.1",
+  "description": "Character and Job randomizer",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "ejs": "2.3.3",
+    "express": "4.13.3"
+  },
+  "engines": {
+    "node": "0.12.7"
+  },
+  "license": "MIT"
+}
